@@ -1,0 +1,52 @@
+﻿using class3_pratice.Models;
+@{
+    ViewData["Title"] = "product";
+    int i = 1;
+    double total = 0;
+}
+
+<h1 class="alert-primary">product</h1>
+<table class=" table table-striped">
+    <thead>
+        <tr>
+            <td>SI#</td>
+            <td>product name</td>
+            <td>unite</td>
+            <td>price</td>
+            <td>quantity</td>
+            <td>subtotal</td>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.fruit)
+        {
+            double subtotal=@item.price*@item.quantity;
+
+            total = total + subtotal;
+            <tr>
+                <td>@i.</td>
+                <td>@item.name</td>
+                
+                <td>@item.unit</td>
+                <td>@item.price</td>
+                <td>@item.quantity</td>
+                <td>@subtotal</td>
+
+
+                
+                
+            </tr>
+            i++;
+        }
+        <tr>
+            <td colspan="5">Total :</td>
+            <td>@total</td>
+            </tr>
+    </tbody>
+
+
+
+
+</table>
+
